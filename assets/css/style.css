@@ -29,7 +29,7 @@ body, html {
   
   background-image: url('../images/v4.png');
   
-  background-size: 45%;
+  background-size: 10%;
   background-position: center;
   background-repeat: no-repeat; /* Fontos, hogy ne ismétlődjön a kép, ha kisebb */
 }
