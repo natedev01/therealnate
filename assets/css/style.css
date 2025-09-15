@@ -114,7 +114,6 @@ h1 {
   font-size: 0.9rem;
   font-weight: 300;
 
-  /* Ugyanaz az animáció, mint a fő tartalmon, de késleltetve */
   animation: fadeIn 1.5s 0.5s ease-in-out backwards;
 }
 
