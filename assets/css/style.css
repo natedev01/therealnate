@@ -110,7 +110,7 @@ h1 {
   width: 100%;        /* Teljes szélességű */
   padding: 1rem;      /* Kellemes térköz */
   text-align: center;
-  color: rgba(255, 255, 255, 0.5); /* Halványabb, diszkrétebb szín */
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
   font-weight: 300;
 
