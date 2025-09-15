@@ -1,10 +1,106 @@
-body {
-  background-color: #222; 
+/* --- Alapbeállítások és Háttér --- */
+:root {
+  --main-color: #3cb882; 
+  --text-color: #ffffff;
+  --dark-bg: #1a1a1a;   /* Sötétszürke a kontraszthoz */
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  overflow: hidden; /* Megakadályozza a scrollbar-t */
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* A HÁTTÉRKÉP BEÁLLÍTÁSA */
+  background-image: url('../images/v4.png'); /* Figyelj az elérési útra! */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* --- Animáció --- */
+.content-wrapper {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Tartalom stílusai --- */
 h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 4.5rem;
-  letter-spacing: 2px;
-  color: #198754; /* Ez a Bootstrap "success" zöld színe */
+  font-size: clamp(2.5rem, 10vw, 5rem); /* Reszponzív betűméret */
+  font-weight: 600;
+  color: var(--text-color);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+/* --- A GLASSMORPHISM NAVIGÁCIÓS SÁV --- */
+.glass-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Térköz a gombok között */
+
+  /* A "Glass" effekt kulcsai: */
+  background: rgba(255, 255, 255, 0.1); /* 1. Félig átlátszó háttér */
+  backdrop-filter: blur(12px);          /* 2. Elmosott háttér (a lényeg!) */
+  -webkit-backdrop-filter: blur(12px);  /* Safari kompatibilitás */
+  border-radius: 50px;                  /* 3. Lekerekített sarkok */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 4. Finom keret */
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* 5. Árnyék a kiemeléshez */
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid transparent; /* Hely fenntartása a hover keretnek */
+  
+  /* Az animáció finomítása */
+  transition: all 0.3s ease;
+}
+
+/* --- Gomb Hover animáció --- */
+.nav-button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  border-color: var(--main-color);
+  transform: translateY(-3px); /* Enyhe kiemelkedés */
+  box-shadow: 0 4px 15px rgba(60, 184, 130, 0.4);
+}
+
+.nav-button i {
+  font-size: 1.5rem; /* Ikon mérete */
 }
