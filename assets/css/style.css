@@ -150,7 +150,7 @@ h1 {
   background-color: var(--main-color);
   color: #000; /* Fekete szöveg a jobb kontrasztért a zöld háttéren */
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   padding: 12px 15px;
   z-index: 10;
 }
@@ -186,4 +186,13 @@ h1 {
 }
 .table-scroll::-webkit-scrollbar-thumb:hover {
   background: #57d49d;
+}
+.page-title {
+  display: inline-block; /* Így a háttér csak a szöveg mögött jelenik meg */
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(60, 184, 130, 0.2); /* A fő színed áttetsző változata */
+  border-left: 4px solid var(--main-color); /* Egy menő kiemelő sáv */
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 2rem;
+  font-weight: 400; /* Kicsit vékonyabb betű a főoldali címnél */
 }
