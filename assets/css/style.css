@@ -188,11 +188,43 @@ h1 {
   background: #57d49d;
 }
 .page-title {
-  display: inline-block; /* Így a háttér csak a szöveg mögött jelenik meg */
-  padding: 0.5rem 1.5rem;
-  background-color: rgba(60, 184, 130, 0.2); /* A fő színed áttetsző változata */
-  border-left: 4px solid var(--main-color); /* Egy menő kiemelő sáv */
-  border-radius: 0 8px 8px 0;
-  margin-bottom: 2rem;
-  font-weight: 400; /* Kicsit vékonyabb betű a főoldali címnél */
+  display: inline-block; /* Fontos a ::after pozicionálásához */
+  position: relative; /* Szintén a ::after miatt kell */
+  font-size: 2.5rem; /* Lehet nagyobb, jobban mutat a gradient */
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 2.5rem; /* Nagyobb térköz alatta */
+  padding-bottom: 10px; /* Térköz az aláhúzásnak */
+
+  /* A Gradient mágia */
+  background: linear-gradient(90deg, var(--main-color), #4dffbf);
+  -webkit-background-clip: text; /* Safari/Chrome kompatibilitás */
+  background-clip: text;
+  color: transparent;
+}
+
+/* Az animált aláhúzás */
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--main-color);
+  
+  /* Animáció beállítása */
+  transform: scaleX(0); /* Kezdetben nulla szélességű */
+  transform-origin: left; /* Balról jobbra fog nőni */
+  animation: stretch-underline 1s 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Az animáció kulcskockái */
+@keyframes stretch-underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
