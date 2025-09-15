@@ -1,19 +1,23 @@
-// Megvárjuk, amíg az egész oldal betöltődik, hogy biztosan létezzenek az elemek.
-document.addEventListener('DOMContentLoaded', (event) => {
+// Megvárjuk, amíg az oldal teljesen betöltődik
+document.addEventListener('DOMContentLoaded', () => {
 
-  // Elmentjük egy változóba a gombot az ID-ja alapján
-  const gomb = document.getElementById('klikk-gomb');
+  // Elmentjük az összes gombot egy listába
+  const navButtons = document.querySelectorAll('.nav-button');
 
-  // Hozzáadunk egy "click" eseményfigyelőt a gombhoz
-  gomb.addEventListener('click', (e) => {
-    // Megakadályozzuk, hogy a link alapértelmezett működése (ugrás) lefusson
-    e.preventDefault(); 
+  // Végigmegyünk a listán, és mindegyik gombra ráteszünk egy eseményfigyelőt
+  navButtons.forEach(button => {
     
-    alert('Fasza, rákattintottál!');
-    console.log('A gombra kattintottak!');
-    
-    // Változtassuk meg a gomb szövegét
-    gomb.innerHTML = '<i class="bi bi-check-circle-fill"></i> Siker!';
+    button.addEventListener('click', (event) => {
+      // Megakadályozzuk, hogy a link alapértelmezett működése (oldal tetejére ugrás) lefusson
+      event.preventDefault(); 
+      
+      // Kiolvassuk a gombban lévő számot a span elemből
+      const buttonNumber = button.querySelector('span').textContent;
+      
+      console.log(`A(z) ${buttonNumber}. gombra kattintottál!`);
+      // Ide jöhet később a logika, pl. oldalváltás, tartalom megjelenítése stb.
+    });
+
   });
 
 });
