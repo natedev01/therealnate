@@ -120,3 +120,70 @@ h1 {
 .main-footer p {
   margin: 0;
 }
+/* A külső "üveg" konténer, ami tartalmazza a táblázatot */
+.table-container {
+  width: 90%;
+  max-width: 800px; /* Ne legyen túl széles nagy képernyőn */
+  height: 70vh; /* A képernyő magasságának 70%-a */
+  margin: 2rem auto 0 auto; /* Középre igazítás és térköz a címtől */
+  padding: 1.5rem;
+  display: flex; /* Flexbox a belső elrendezéshez */
+  flex-direction: column;
+}
+
+/* Ez a div teszi lehetővé, hogy csak a táblázat teste görgethető */
+.table-scroll {
+  flex-grow: 1; /* Kitölti a rendelkezésre álló helyet */
+  overflow-y: auto; /* Csak akkor jelenik meg görgetősáv, ha szükséges */
+}
+
+/* A táblázat alap stílusai */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse; /* Eltünteti a cellák közötti dupla vonalat */
+}
+
+/* A táblázat fejlécének stílusa */
+.styled-table thead th {
+  position: sticky; /* A "lebegő" vagy "ragadós" fejléc titka */
+  top: 0; /* A görgethető terület tetejére rögzítjük */
+  background-color: var(--main-color);
+  color: #000; /* Fekete szöveg a jobb kontrasztért a zöld háttéren */
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 15px;
+  z-index: 10;
+}
+
+/* Az adatcellák stílusa */
+.styled-table tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Halvány elválasztó vonal */
+}
+
+/* A páros sorok háttérszíne a jobb olvashatóságért (csíkozás) */
+.styled-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effektus a sorokra */
+.styled-table tbody tr:hover {
+  background-color: rgba(60, 184, 130, 0.2); /* A fő színed halványabb, átlátszó verziója */
+  cursor: pointer;
+}
+
+/* Egyedi görgetősáv a sötét dizájnhoz (Chrome/Safari) */
+.table-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.table-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.table-scroll::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 4px;
+}
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #57d49d;
+}
