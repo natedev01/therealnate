@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGH - therealnate.hu</title>
+    <title>SGH Log Elemző - therealnate.hu</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <main class="main-container">
         <div class="content-wrapper">
-            <h1>SGH Eszköz</h1>
+            <h1 class="page-title">SGH Log Elemző</h1>
             
             <div id="navbar-placeholder"></div>
 
+            <div class="tool-container glass-effect">
+                <p class="tool-description">
+                    Tallózd be az MTA log fájlokat (.log) a sikeres ügyek megszámolásához. Egyszerre több fájlt is kiválaszthatsz.
+                </p>
+
+                <div class="file-upload-wrapper">
+                    <label for="log-files" class="custom-file-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+                        <span>Log Fájlok Tallózása...</span>
+                    </label>
+                    <input type="file" id="log-files" multiple accept=".log">
+                </div>
+
+                <div id="results-container">
+                    <p>Várom a fájlokat...</p>
+                </div>
+            </div>
             </div>
     </main>
     
     <div id="footer-placeholder"></div>
 
     <script src="assets/js/templating.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/sgh-logic.js"></script> 
 </body>
 </html>
