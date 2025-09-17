@@ -228,3 +228,57 @@ h1 {
     transform: scaleX(1);
   }
 }
+
+/* --- Eszköz Konténer Stílusok (SGH Oldal) --- */
+.tool-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tool-description {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.file-upload-wrapper input[type="file"] {
+  display: none;
+}
+
+.custom-file-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  background-color: var(--main-color);
+  color: #000;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-file-button:hover {
+  background-color: #57d49d;
+  box-shadow: 0 4px 15px rgba(60, 184, 130, 0.4);
+  transform: translateY(-2px);
+}
+
+#results-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  min-height: 80px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+#results-container .count {
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--main-color);
+}
