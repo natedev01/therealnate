@@ -238,12 +238,6 @@ h1 {
   text-align: center;
 }
 
-.tool-description {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
-  font-size: 0.9rem;
-}
-
 .file-upload-wrapper input[type="file"] {
   display: none;
 }
@@ -281,4 +275,40 @@ h1 {
   font-weight: 600;
   font-size: 2rem;
   color: var(--main-color);
+}
+/* A leírás olvashatóságának javítása */
+.tool-description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  padding: 1rem; /* Térköz a szöveg körül */
+  background-color: rgba(0, 0, 0, 0.4); /* Sötét, áttetsző háttér */
+  border-radius: 8px;
+  border-left: 3px solid var(--main-color);
+}
+
+/* Az összefoglaló doboz (átlagidő) stílusa */
+.summary-box {
+  background-color: rgba(60, 184, 130, 0.15);
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-box p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.summary-box .summary-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-left: 10px;
+}
+
+#results-container .table-container {
+    height: auto;
+    max-height: 50vh; /* Legfeljebb a képernyő felét foglalja el, utána görgethető */
 }
